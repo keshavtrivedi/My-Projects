@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Library System</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+
+    <style type="text/css">
+        .page-container {
+            padding-left: 0 !important;
+        }
+    </style>
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12">
+
+                                <!-- USER TABLE -->
+                                <h3 class="title-5 m-b-35">User Management</h3>                                
+                                <div class="row">
+                                    <div class="col-xs-4 col-md-4">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <strong>USER</strong>
+                                            </div>
+                                            <ul class="nav nav-tabs">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#addUser">Add</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#searchUser">Search</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#updateUser">Update</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#removeUser">Remove</a>
+                                                </li>                                              
+                                            </ul>                                         
+                                            <div class="tab-content">
+
+                                                <!-- Add User Tab Container -->
+                                                <div id="addUser" class="card-body card-block container tab-pane active">
+                                                    <div class="form-group">
+                                                        <label for="add_username" class=" form-control-label">Name</label>
+                                                        <input type="text" id="add_username" placeholder="Enter your name" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="add_barcode" class=" form-control-label">Barcode</label>
+                                                        <input type="text" id="add_barcode" placeholder="Enter your barcode" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="form-control-label">Member Type</label>                                                    
+                                                        <select name="member" id="add_member" class="form-control">
+                                                            <option><option>
+                                                            <option value="staff">Staff</option>
+                                                            <option value="student">Student</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" id="add_user_btn">
+                                                            <i class="zmdi zmdi-plus"></i>Add User</button>
+                                                    </div>            
+                                                </div>
+                                                <!-- End Add User Tab -->
+                                                <!-- Search User Tab Container -->
+                                                <div id="searchUser" class="card-body card-block container tab-pane fade">
+                                                    <div class="form-group">
+                                                        <label for="search_username" class=" form-control-label">Name</label>
+                                                        <input type="text" id="search_username" placeholder="Enter search name" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="search_barcode" class=" form-control-label">Barcode</label>
+                                                        <input type="text" id="search_barcode" placeholder="Enter search barcode" class="form-control">
+                                                    </div>                                                    
+                                                    <div class="form-group">
+                                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" id="user_search_btn"> 
+                                                            <i class="zmdi zmdi-plus"></i>Search</button>
+                                                    </div>            
+                                                </div>
+                                                <!-- End Search User Tab -->
+                                                <!-- Update User Tab Container -->
+                                                <div id="updateUser" class="card-body card-block container tab-pane fade">
+                                                    <div class="form-group">
+                                                        <label for="userId" class="form-control-label">User Id</label>
+                                                        <input type="text" id="userId" placeholder="Enter user id" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="update_username" class="form-control-label">Name</label>
+                                                        <input type="text" id="update_username" placeholder="Enter update name" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="update_member" class="form-control-label">Member Type</label>                                                    
+                                                        <select name="member" id="update_member" class="form-control">
+                                                            <option></option>
+                                                            <option value="staff">Staff</option>
+                                                            <option value="student">Student</option>                                                        
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" id="user_update_btn"> 
+                                                            <i class="zmdi zmdi-plus"></i>Update</button>
+                                                    </div>            
+                                                </div>
+                                                <!-- End Update User Tab -->
+                                                <!-- Remove User Tab Container -->
+                                                <div id="removeUser" class="card-body card-block container tab-pane fade">
+                                                    <div class="form-group">
+                                                        <label for="remove_user_id" class=" form-control-label">Id</label>
+                                                        <input type="text" id="remove_user_id" placeholder="Enter remove id" class="form-control">
+                                                    </div>                                                    
+                                                    <div class="form-group">
+                                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" id="user_remove_btn"> 
+                                                            <i class="zmdi zmdi-plus"></i>Remove</button>
+                                                    </div>            
+                                                </div>
+                                                <!-- End Remove User Tab -->
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-8 col-md-8">
+                                        <div class="table-responsive m-b-40">
+                                            <table class="table table-borderless table-data3" id="user_table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th>Name</th>
+                                                        <th>Barcode</th>
+                                                        <th>Member Type</th>
+                                                        <th>Created At</th>
+                                                        <th>Updated At</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr id="usertable">
+                                                        <!-- <td id="user_id"></td>
+                                                        <td id="username"></td>
+                                                        <td id="barcode"></td>
+                                                        <td id="member"></td>
+                                                        <td id="user_create_at"></td>
+                                                        <td id="user_update_at"></td> -->
+                                                    </tr>                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END USER TABLE -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12">
+
+                                <!-- BOOK TABLE -->
+                                <h3 class="title-5 m-b-35">Book Management</h3>                                
+                                <div class="row">
+                                    <div class="col-xs-4 col-md-4">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <strong>BOOK</strong>
+                                            </div>
+                                            <ul class="nav nav-tabs">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#addBook">Add</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#searchBook">Search</a>
+                                                </li>                                                
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#removeBook">Remove</a>
+                                                </li>                                              
+                                            </ul>                                         
+                                            <div class="tab-content">
+
+                                                <!-- Add Book Tab Container -->
+                                                <div id="addBook" class="card-body card-block container tab-pane active">
+                                                    <div class="form-group">
+                                                        <label for="add_book-title" class=" form-control-label">Title</label>
+                                                        <input type="text" id="add_book_title" placeholder="Enter book title" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="add_isbn" class=" form-control-label">ISBN</label>
+                                                        <input type="text" id="add_isbn" placeholder="Enter ISBN" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="add_authors" class=" form-control-label">Authors</label>
+                                                        <input type="text" id="add_authors" placeholder="Enter authors" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" id="add_book_btn">
+                                                            <i class="zmdi zmdi-plus"></i>Add Book</button>
+                                                    </div>            
+                                                </div>
+                                                <!-- End Add Book Tab -->
+                                                <!-- Search Book Tab Container -->
+                                                <div id="searchBook" class="card-body card-block container tab-pane fade">
+                                                    <div class="form-group">
+                                                        <label for="search_book_title" class=" form-control-label">Title</label>
+                                                        <input type="text" id="search_book_title" placeholder="Enter search book title" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="search_authors" class=" form-control-label">Authors</label>
+                                                        <input type="text" id="search_authors" placeholder="Enter search authors" class="form-control">
+                                                    </div>                                                    
+                                                    <div class="form-group">
+                                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" id="book_search_btn"> 
+                                                            <i class="zmdi zmdi-plus"></i>Search</button>
+                                                    </div>            
+                                                </div>                                                
+                                                <!-- End Search Book Tab -->
+                                                <!-- Remove Book Tab Container -->
+                                                <div id="removeBook" class="card-body card-block container tab-pane fade">
+                                                    <div class="form-group">
+                                                        <label for="remove_book" class=" form-control-label">Id</label>
+                                                        <input type="text" id="remove_book_id" placeholder="Enter remove id" class="form-control">
+                                                    </div>                                                    
+                                                    <div class="form-group">
+                                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" id="book_remove_btn"> 
+                                                            <i class="zmdi zmdi-plus"></i>Remove</button>
+                                                    </div>            
+                                                </div>
+                                                <!-- End Remove Book Tab -->
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-8 col-md-8">
+                                        <div class="table-responsive m-b-40">
+                                            <table class="table table-borderless table-data3" id="user_table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th>Title</th>
+                                                        <th>ISBN</th>
+                                                        <th>Authors</th>                       
+                                                        <th>Created At</th>
+                                                        <th>Updated At</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr id="booktable">
+                                                        <!-- <td id="book_id">1</td>
+                                                        <td id="book_title">Martin Chorley</td>
+                                                        <td id="book_isbn">123456</td>         
+                                                        <td id="book_create_at">2020-01-10</td>
+                                                        <td id="book_update_at">2020-01-10</td> -->
+                                                    </tr>                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END BOOK TABLE -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12">
+
+                                <!-- LOAN BOOK TABLE -->
+                                <h3 class="title-5 m-b-35">Loan Management</h3>                                
+                                <div class="row">
+                                    <div class="col-xs-4 col-md-4">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <strong>LOAN</strong>
+                                            </div>
+                                            <ul class="nav nav-tabs">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#loanBook">Loan</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#getList">Get List</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#getUser">Get User</a>
+                                                </li>                                              
+                                            </ul>                                         
+                                            <div class="tab-content">
+
+                                                <!-- Loan Book Tab Container -->
+                                                <div id="loanBook" class="card-body card-block container tab-pane active">
+                                                    <div class="form-group">
+                                                        <label for="add_duedate" class=" form-control-label">Due Date</label>
+                                                        <input type="text" id="add_duedate" placeholder="Enter due date" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="add_user_id" class=" form-control-label">User Id</label>
+                                                        <input type="text" id="add_user_id" placeholder="Enter User Id" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="add_book_id" class=" form-control-label">Book Id</label>
+                                                        <input type="text" id="add_book_id" placeholder="Enter Book Id" class="form-control">
+                                                    </div>                                     
+                                                    <div class="form-group">
+                                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" id="loan_book_btn">
+                                                            <i class="zmdi zmdi-plus"></i>Loan Book</button>
+                                                    </div>            
+                                                </div>
+                                                <!-- End Loan Book Tab -->
+                                                <!-- Get Loan List Tab Container -->
+                                                <div id="getList" class="card-body card-block container tab-pane fade">                                                    
+                                                    <div class="form-group">
+                                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" id="get_list_btn"> 
+                                                            <i class="zmdi zmdi-plus"></i>Get List</button>
+                                                    </div>            
+                                                </div>
+                                                <!-- End Get Load List Tab -->
+                                                <!-- Get User Tab Container -->
+                                                <div id="getUser" class="card-body card-block container tab-pane fade">                                                    
+                                                    <div class="form-group">
+                                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" id="get_user_btn"> 
+                                                            <i class="zmdi zmdi-plus"></i>Get User</button>
+                                                    </div>            
+                                                </div>
+                                                <!-- End Get User Tab -->                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-8 col-md-8">
+                                        <div class="table-responsive m-b-40">
+                                            <table class="table table-borderless table-data3" id="user_table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th>Due Date</th>
+                                                        <th>Created At</th>
+                                                        <th>Updated At</th>
+                                                        <th>User Id</th>
+                                                        <th>Book Id</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr id="loantable">
+                                                        <!-- <td id="user_id">1</td>
+                                                        <td id="username">Martin Chorley</td>
+                                                        <td id="barcode">123456</td>
+                                                        <td id="member">staff</td>
+                                                        <td id="user_create_at">2020-01-10</td>
+                                                        <td id="user_update_at">2020-01-10</td> -->
+                                                    </tr>                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END LOAN BOOK TABLE -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            // User add button click event
+            $("#add_user_btn").click(function(){
+                var username = $("#add_username").val();
+                var barcode  = $("#add_barcode").val();
+                var member = $("#add_member").val();
+
+                //  Input fields validation
+                if(username ==='' || barcode === '' || member === ''){
+                    alert("Input failed! Try input again!");
+                    $("#add_username").val('');
+                    $("#add_barcode").val('');
+                    $("#add_member").val('');
+                }else{
+
+                    // Post user data to the http://127.0.0.1:3000/users
+                    $.ajax({
+                        url: "http://127.0.0.1:3000/users",
+                        type: "post",
+                        data: {"name":username, "barcode":barcode, "memberType": member},
+                        success: function (response) {       
+                            alert("Succeed!");
+                            $("#usertable").html('');
+                            $("#usertable").append("<td>"+response.id+"</td>");
+                            $("#usertable").append("<td>"+response.name+"</td>");
+                            $("#usertable").append("<td>"+response.barcode+"</td>");
+                            $("#usertable").append("<td>"+response.memberType+"</td>");
+                            $("#usertable").append("<td>"+response.createdAt+"</td>");
+                            $("#usertable").append("<td>"+response.updatedAt+"</td>");
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            alert("Failed!");
+                            console.log(textStatus, errorThrown);
+                        }
+                    });                    
+                }
+            });            
+
+            // User search button click event
+            $("#user_search_btn").click(function(){
+                var username = $("#search_username").val();
+                var barcode = $("#search_barcode").val();
+                if((username === '') && (barcode === '')){
+                    alert("Input failed! Try input again!");
+                }else{                    
+                    // Get user data from the http://127.0.0.1/users
+                    $.ajax({
+                        url: "http://127.0.0.1:3000/search?type=user&barcode="+ barcode + "&name=" +username,
+                        type: "get",                            
+                        success: function(response){
+                            console.log(response[0].id);
+                            $("#usertable").html('');
+                            $("#usertable").append("<td>"+response[0].id+"</td>");
+                            $("#usertable").append("<td>"+response[0].name+"</td>");
+                            $("#usertable").append("<td>"+response[0].barcode+"</td>");
+                            $("#usertable").append("<td>"+response[0].memberType+"</td>");
+                            $("#usertable").append("<td>"+response[0].createdAt+"</td>");
+                            $("#usertable").append("<td>"+response[0].updatedAt+"</td>");
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            alert("Failed!");
+                            console.log(textStatus, errorThrown);
+                        }
+                    });                                        
+                }
+            });
+
+            // User update button click event
+            $("#user_update_btn").click(function(){
+                var id = $('#userId').val();
+                var username = $("#update_username").val();
+                var member = $("#update_member").val();
+
+                if((id === '')&&(username === '' || member === '')){
+                    alert("Input failed! Try input again!");                
+                }else{                    
+                    // Update user data to http://127.0.0.1:3000/user                    
+                    $.ajax({
+                        url: "http://127.0.0.1:3000/users/" + id,
+                        method: "put",                            
+                        data: {"name":username, "memberType": member},
+                        success: function(response){
+                            console.log(response);                            
+                            $("#usertable").html('');
+                            $("#usertable").append("<td>"+response.id+"</td>");
+                            $("#usertable").append("<td>"+response.name+"</td>");
+                            $("#usertable").append("<td>"+response.barcode+"</td>");
+                            $("#usertable").append("<td>"+response.memberType+"</td>");
+                            $("#usertable").append("<td>"+response.createdAt+"</td>");
+                            $("#usertable").append("<td>"+response.updatedAt+"</td>");
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            alert("Failed!");
+                            console.log(textStatus, errorThrown);
+                        }
+                    });                                        
+                }
+            });
+
+            // User remove button click event
+            $("#user_remove_btn").click(function(){
+                var id = $('#remove_user_id').val();                
+
+                if(id === ''){
+                    alert("Input failed! Try input again!");                
+                }else{                    
+                    // Remove user data from http://127.0.0.1:3000/users
+                    $.ajax({
+                        url: "http://127.0.0.1:3000/users/" + id,
+                        method: "delete",                                                    
+                        success: function(response){
+                            console.log(response);                            
+                            alert("Succeed!");
+                            $("#usertable").html('');
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            alert("Failed!");
+                            console.log(textStatus, errorThrown);
+                        }
+                    });                                        
+                }
+            });
+
+            // Book add button click event
+            $("#add_book_btn").click(function(){
+                
+                var title = $("#add_book_title").val();
+                var isbn = $("#add_isbn").val();
+                var authors = $("#add_authors").val();
+
+                if(title === '' || isbn === '' || authors === ''){
+                    alert("Input failed! Try input again!");
+                    $("#add_book_title").val('');
+                    $("#add_isbn").val('');
+                    $("#add_authors").val('');
+                }else{
+                    // Post book data to the http://127.0.0.1:3000/books
+                    $.ajax({
+                        url: "http://127.0.0.1:3000/books",
+                        type: "post",
+                        data: {"title":title, "isbn":isbn},
+                        success: function (response) {     
+                            console.log(response);                                             
+                            $.ajax({   
+                                // Post authors data to the http://127.0.0.1:3000/books/bookId/authors
+                                url: "http://127.0.0.1:3000/books/" + response.id + "/authors",
+                                type: "post",
+                                data: {"name": authors},
+                                success: function () {       
+                                    $("#booktable").html('');
+                                    $("#booktable").append("<td>"+response.id+"</td>");
+                                    $("#booktable").append("<td>"+response.title+"</td>");
+                                    $("#booktable").append("<td>"+response.isbn+"</td>");
+                                    $("#booktable").append("<td>"+authors+"</td>");
+                                    $("#booktable").append("<td>"+response.createdAt+"</td>");
+                                    $("#booktable").append("<td>"+response.updatedAt+"</td>");                            
+                                },
+                                error: function(jqXHR, textStatus, errorThrown) {
+                                    alert("Failed!");
+                                    console.log(textStatus, errorThrown);
+                                }
+                            });
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            alert("Failed!");
+                            console.log(textStatus, errorThrown);
+                        }
+                    });
+                }                             
+            });
+
+            // Book search button click event
+            $("#book_search_btn").click(function(){
+                var title = $("#search_book_title").val();
+                var authors = $("#search_authors").val();
+                if((title === '') && (authors === '')){
+                    alert("Input failed! Try input again!");
+                }else{
+                    // Get book data from the http://127.0.0.1:3000/books
+                    if(authors === ''){
+                        $.ajax({
+                            url: "http://127.0.0.1:3000/search?type=book&title="+ title,
+                            type: "get",                            
+                            success: function(response){
+                                // console.log(response);
+                                $.ajax({
+                                    url: "http://127.0.0.1:3000/books/"+response[0].id+"?allEntities=true",
+                                    type: "get",                            
+                                    success: function(data){
+                                        console.log(data.Authors[0].name);
+                                        $("#booktable").html('');
+                                        $("#booktable").append("<td>"+response[0].id+"</td>");
+                                        $("#booktable").append("<td>"+response[0].title+"</td>");
+                                        $("#booktable").append("<td>"+response[0].isbn+"</td>");
+                                        $("#booktable").append("<td>"+data.Authors[0].name+"</td>");
+                                        $("#booktable").append("<td>"+response[0].createdAt+"</td>");
+                                        $("#booktable").append("<td>"+response[0].updatedAt+"</td>");
+                                    },
+                                    error: function(jqXHR, textStatus, errorThrown) {
+                                        alert("Failed!");
+                                        console.log(textStatus, errorThrown);
+                                    }
+                                });
+                                                            
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                alert("Failed!");
+                                console.log(textStatus, errorThrown);
+                            }
+                        });
+                    }
+                    // Get book data from the http://127.0.0.1:3000/authors
+                    if(title === ''){
+                        $.ajax({
+                            url: "http://127.0.0.1:3000/search?type=author&name="+ authors,
+                            type: "get",                            
+                            success: function(response){
+                                console.log(response[0].id);
+                                $.ajax({
+                                    url: "http://127.0.0.1:3000/authors/"+response[0].id+"?allEntities=true",
+                                    type: "get",                            
+                                    success: function(data){
+                                        console.log(data);
+                                        $("#booktable").html('');
+                                        $("#booktable").append("<td>"+data.Books[0].id+"</td>");
+                                        $("#booktable").append("<td>"+data.Books[0].title+"</td>");
+                                        $("#booktable").append("<td>"+data.Books[0].isbn+"</td>");
+                                        $("#booktable").append("<td>"+response[0].name+"</td>");
+                                        $("#booktable").append("<td>"+data.Books[0].createdAt+"</td>");
+                                        $("#booktable").append("<td>"+data.Books[0].updatedAt+"</td>");
+                                    },
+                                    error: function(jqXHR, textStatus, errorThrown) {
+                                        alert("Failed!");
+                                        console.log(textStatus, errorThrown);
+                                    }
+                                });
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                alert("Failed!");
+                                console.log(textStatus, errorThrown);
+                            }
+                        });
+                    }                    
+                }
+            });
+            
+            // Book remove button click event
+            $("#book_remove_btn").click(function(){               
+                var id = $('#remove_book_id').val();                
+                if(id === ''){
+                    alert("Input failed! Try input again!");                
+                }else{                    
+                    // Remove book data from http://127.0.0.1:3000/books
+                    $.ajax({
+                        url: "http://127.0.0.1:3000/books/" + id,
+                        method: "delete",                                                    
+                        success: function(response){
+                            console.log(response);                            
+                            alert("Succeed!");
+                            $("#booktable").html('');
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            alert("Failed!");
+                            console.log(textStatus, errorThrown);
+                        }
+                    });                                        
+                }            
+            });
+
+            // Loan book button click event
+            $("#loan_book_btn").click(function(){
+                
+                var duedate = $("#add_duedate").val();
+                var userId = $("#add_user_id").val();
+                var bookId = $("#add_book_id").val();
+
+                if(duedate === '' || userId === '' || bookId === ''){
+                    alert("Input failed! Try input again!");
+                    $("#add_duedate").val('');
+                    $("#add_user_id").val('');
+                    $("#add_book_id").val('');
+                }else{
+                    // Post loan data to the http://127.0.0.1:3000/users/userid/loans/bookid
+                    $.ajax({
+                        url: "http://127.0.0.1:3000/users/" + userId + "/loans/" + bookId,
+                        type: "post",
+                        data: {"dueDate":duedate},
+                        success: function (response) {     
+                            console.log(response);
+                            $("#loantable").html('');
+                            $("#loantable").append("<td>"+response.id+"</td>");
+                            $("#loantable").append("<td>"+response.dueDate+"</td>");
+                            $("#loantable").append("<td>"+response.createdAt+"</td>");
+                            $("#loantable").append("<td>"+response.updatedAt+"</td>");
+                            $("#loantable").append("<td>"+response.UserId+"</td>");
+                            $("#loantable").append("<td>"+response.BookId+"</td>");
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            alert("Failed!");
+                            console.log(textStatus, errorThrown);
+                        }
+                    });
+                }                             
+            });
+
+            // Loan get list button click event
+            $("#get_list_btn").click(function(){
+                $.ajax({
+                    url: "http://127.0.0.1:3000/loans/1",
+                    type: "get",                            
+                    success: function(response){
+                        // console.log(response);
+                        $("#loantable").html('');
+                        $("#loantable").append("<td>"+response.id+"</td>");
+                        $("#loantable").append("<td>"+response.dueDate+"</td>");
+                        $("#loantable").append("<td>"+response.createdAt+"</td>");
+                        $("#loantable").append("<td>"+response.updatedAt+"</td>");
+                        $("#loantable").append("<td>"+response.UserId+"</td>");
+                        $("#loantable").append("<td>"+response.BookId+"</td>");
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        alert("Failed!");
+                        console.log(textStatus, errorThrown);
+                    }
+                });
+            });
+
+            // Loan get user button click event
+            $("#get_user_btn").click(function(){
+                $.ajax({
+                    url: "http://127.0.0.1:3000/users/2",
+                    type: "get",                            
+                    success: function(response){
+                        // console.log(response);
+                        $("#loantable").html('');
+                        alert("id:"+response.id + " name:" + response.name + " barcode:" + response.barcode);                
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        alert("Failed!");
+                        console.log(textStatus, errorThrown);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+<!-- end document-->
